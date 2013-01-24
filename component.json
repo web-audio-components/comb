@@ -1,0 +1,13 @@
+{
+  "name": "comb",
+  "repo": "web-audio-components/comb",
+  "description": "A comb filter effect module for the Web Audio API.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
