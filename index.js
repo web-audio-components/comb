@@ -33,10 +33,10 @@ function Comb (context, delay, feedback, damping, cutoff) {
   this._feedback.connect(this.input);
 
   // Defaults
-  this.delay    = delay     || this.meta.delay.defaultValue;
-  this.feedback = feedback  || this.meta.feedback.defaultValue;
-  this.damping  = damping   || this.meta.damping.defaultValue;
-  this.cutoff   = cutoff    || this.meta.damping.defaultValue;
+  this._delay.delayTime.value   = delay     || this.meta.delay.defaultValue;
+  this._feedback.gain.value     = feedback  || this.meta.feedback.defaultValue;
+  this._damping.gain.value      = damping   || this.meta.damping.defaultValue;
+  this._filter.frequency.value  = cutoff    || this.meta.damping.defaultValue;
 
   // Prevent positive feedback loops
   if (this.feedback * this.damping >= 1.0) {
@@ -89,7 +89,7 @@ Comb.prototype = Object.create(null, {
       damping: {
         min: 0,
         max: 1,
-        defaultValue: 0.2,
+        defaultValue: 0.52,
         type: "pot"
       },
       cutoff: {
