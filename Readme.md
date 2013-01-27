@@ -11,9 +11,14 @@
 
 ```javascript
 var context = new webkitAudioContext()
+  , osc = context.createOscillator()
   , Comb = require("comb")
-  , comb = new Comb(context, 0.027, 0.84, 0.8, 2000)
-  , osc = context.createOscillator();
+  , comb = new Comb(context, {
+      delay: 0.044,
+      feedback: 0.84,
+      damping: 0.5,
+      cutoff: 8000
+    });
 
 osc.connect(comb.input);
 comb.connect(context.destination);
@@ -22,11 +27,11 @@ osc.start(0);
 
 ## API
 
-### Comb(context, delay, feedback, damping, cutoff)
+### Comb(context, options)
 
 Instantiate a Comb effect module. Expects an `AudioContext` as the first parameter.
 
-**Parameters**
+**Options**
 
 - `delay` Signal delay time in seconds.
 - `feedback` Delayed signal gain coefficient.
