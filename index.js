@@ -82,25 +82,25 @@ Comb.prototype = Object.create(null, {
           min: 0,
           max: 3,
           defaultValue: 0.027,
-          type: "pot"
+          type: "float"
         },
         feedback: {
           min: 0,
           max: 1,
           defaultValue: 0.84,
-          type: "pot"
+          type: "float"
         },
         damping: {
           min: 0,
           max: 1,
           defaultValue: 0.52,
-          type: "pot"
+          type: "float"
         },
         cutoff: {
           min: 0,
           max: 22050,
           defaultValue: 3000,
-          type: "pot"
+          type: "float"
         }
       }
     }
