@@ -35,6 +35,7 @@ function Comb (context, opts) {
 
   // Defaults
   var p = this.meta.params;
+  opts = opts || {};
   this._delay.delayTime.value   = opts.delay     || p.delay.defaultValue;
   this._feedback.gain.value     = opts.feedback  || p.feedback.defaultValue;
   this._damping.gain.value      = opts.damping   || p.damping.defaultValue;
