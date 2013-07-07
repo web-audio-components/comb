@@ -15,14 +15,14 @@
  */
 
 function Comb (context, opts) {
-  this.input = context.createGainNode();
-  this.output = context.createGainNode();
+  this.input = context.createGain();
+  this.output = context.createGain();
 
   // Internal AudioNodes
-  this._delay = context.createDelayNode();
-  this._damping = context.createGainNode();
+  this._delay = context.createDelay();
+  this._damping = context.createGain();
   this._filter = context.createBiquadFilter();
-  this._feedback = context.createGainNode();
+  this._feedback = context.createGain();
 
   // AudioNode graph routing
   this.input.connect(this._delay);
